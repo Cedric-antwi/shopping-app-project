@@ -3,7 +3,7 @@ import App from './pages/Main'
 import Overview from './pages/Overview'
 import NoPage from './pages/NoPage'
 import ShowBasket from './pages/ShowBasket'
-// import Data from './Data'
+import Data from './Data'
 import React, {useState} from 'react'
 
 export default function App2(){
@@ -11,6 +11,7 @@ export default function App2(){
 const [basket, setBasket] = useState([])
 const [count, setCount] = useState(0);
 const [totalPrice, setTotalPrice] = useState(0);
+// const [itemQuantity, setItemQuantity] = useState(0)
 
 const increment = () => {
   setCount(count + 1);
@@ -25,9 +26,10 @@ const handleProductClick = (price) => {
 
 
 const basketItems = (item) => {
-    console.log("here",item);
+    console.log("here",item)
     if (basket.includes(item)){
         setCount(count + 1)
+        item.defaultQuantity += 1
     } else {
         setBasket([...basket, item])  
     }
@@ -50,7 +52,7 @@ const basketItems = (item) => {
                     
                     />} />
                     <Route path="/overview/:id" element={<Overview/>} />
-                    <Route path="/Basket" element={<ShowBasket basketItems={basket} count={count} totalPrice={totalPrice}/>}/>
+                    <Route path="/Basket" element={<ShowBasket basketItems={basket} count={count} totalPrice={totalPrice} data={Data} />}/>
                     <Route path="*" element={<NoPage />} /> 
                 </Routes>
             </BrowserRouter>

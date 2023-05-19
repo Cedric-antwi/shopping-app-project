@@ -4,7 +4,7 @@ import BasketProducts from '../components/BasketProducts'
 
 
 
-export default function ShowBasket({basketItems, count, totalPrice}){
+export default function ShowBasket({basketItems, totalPrice, data}){
     // const location = useLocation();
     // const data = location.state?.state;
     // console.log(props.products)
@@ -20,7 +20,7 @@ export default function ShowBasket({basketItems, count, totalPrice}){
                 img={item.img}
                 title={item.productTitle}
                 cost={item.price}
-                count={count}
+                data={item}
                 // thisState={basketItems}
                 // set={set}
             />

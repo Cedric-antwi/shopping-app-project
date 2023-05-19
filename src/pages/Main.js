@@ -10,7 +10,7 @@ import Carousel from '../components/Carousel';
 import { useState } from 'react'
 import Data from '../Data'
 
-function App({basketItems, totalPrice, handleProductClick, emptyBasket, increment, count }) {
+function App({basketItems, totalPrice, handleProductClick, emptyBasket, increment, count}) {
 // PRODUCTS ARRAY //
 // const [count, setCount] = useState(0);
 // const [totalPrice, setTotalPrice] = useState(0)

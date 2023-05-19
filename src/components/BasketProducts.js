@@ -10,7 +10,7 @@ function BasketProducts(props){
             <div className='basket-info'>
                 <p>{props.title}</p>
                 <p>Cost:£ {props.cost}</p>
-                <p>Quantity:{props.count}</p>
+                <p>Quantity:{props.data.defaultQuantity}</p>
             </div>
 
         </div>

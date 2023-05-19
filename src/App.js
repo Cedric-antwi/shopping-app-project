@@ -9,12 +9,29 @@ import React, {useState} from 'react'
 export default function App2(){
 
 const [basket, setBasket] = useState([])
-// const [quantity, setQuantity] = useState(0)
+const [count, setCount] = useState(0);
+const [totalPrice, setTotalPrice] = useState(0);
+
+const increment = () => {
+  setCount(count + 1);
+};
+const emptyBasket = () => {
+  setCount(0);
+  setTotalPrice(0);
+};
+const handleProductClick = (price) => {
+  setTotalPrice((prevTotalPrice) => prevTotalPrice + parseFloat(price));
+};
 
 
 const basketItems = (item) => {
-    // if (basket.indexOf(item) === -1) return basket;
-    setBasket([...basket, item])
+    console.log("here",item);
+    if (basket.includes(item)){
+        setCount(count + 1)
+    } else {
+        setBasket([...basket, item])  
+    }
+
 }
 
 
@@ -23,9 +40,17 @@ const basketItems = (item) => {
             <BrowserRouter>
                 <Routes>
                     <Route index element={<App />} />
-                    <Route path="/home" element={<App basketItems={basketItems}/>} />
+                    <Route path="/home" element={<App 
+                    basketItems={basketItems} 
+                    totalPrice={totalPrice}
+                    handleProductClick={handleProductClick}
+                    emptyBasket={emptyBasket}
+                    increment={increment}
+                    count={count}
+                    
+                    />} />
                     <Route path="/overview/:id" element={<Overview/>} />
-                    <Route path="/Basket" element={<ShowBasket basketItems={basket} />}/>
+                    <Route path="/Basket" element={<ShowBasket basketItems={basket} count={count} totalPrice={totalPrice}/>}/>
                     <Route path="*" element={<NoPage />} /> 
                 </Routes>
             </BrowserRouter>

@@ -9,12 +9,11 @@ import Product from '../components/Product'
 import Carousel from '../components/Carousel';
 import { useState } from 'react'
 import Data from '../Data'
-// import CarouselItem from 'react-bootstrap/esm/CarouselItem';
 
-function App({basketItems}) {
+function App({basketItems, totalPrice, handleProductClick, emptyBasket, increment, count }) {
 // PRODUCTS ARRAY //
-const [count, setCount] = useState(0);
-const [totalPrice, setTotalPrice] = useState(0)
+// const [count, setCount] = useState(0);
+// const [totalPrice, setTotalPrice] = useState(0)
 const [value, setValue] = useState('')
 
 
@@ -24,17 +23,17 @@ function handleSearch(item){
   setValue(item.target.value)
 }
 
-const increment = () => {
-  setCount(count + 1);
-}
-const emptyBasket = () => {
-  setCount(0)
-  setTotalPrice(0)
-}
-const handleProductClick = (price) => {
-  setTotalPrice(prevTotalPrice => prevTotalPrice + parseFloat(price))
+// const increment = () => {
+//   setCount(count + 1);
+// }
+// const emptyBasket = () => {
+//   setCount(0)
+//   setTotalPrice(0)
+// }
+// const handleProductClick = (price) => {
+//   setTotalPrice(prevTotalPrice => prevTotalPrice + parseFloat(price))
 
-}
+// }
 
 
 // useState below handles delete
@@ -78,6 +77,8 @@ const shopProducts = filteredData.map((item) => {
     searchValue={value}
     handleSearchValue={(event) => handleSearch(event)}
     setSearchValue={setValue}
+    basketItems={basketItems}
+    count={count}
      
     />
     <Carousel/>

@@ -3,8 +3,8 @@ html {
   overflow-x: hidden;
 }
 
-#navbar-banner {
-  background-color: #388b;
+.bg-light {
+  background-color: #388b !important;
 }
 
 .products{

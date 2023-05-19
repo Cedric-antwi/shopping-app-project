@@ -5,12 +5,12 @@ function BasketProducts(props){
         <>
             <div className="basket-products">
             <div className='basket-img-box'>
-                <img alt='' src={props.img} height="200px" width="300px"/>
+                <img alt='' src={props.img} height="125px" width="225px"/>
             </div>
             <div className='basket-info'>
                 <p>{props.title}</p>
                 <p>Cost:£ {props.cost}</p>
-                <p>Quantity:{props.data.defaultQuantity}</p>
+                <p>Quantity:{props.data.defaultQuantity}<button>+</button><button>-</button></p>
             </div>
 
         </div>

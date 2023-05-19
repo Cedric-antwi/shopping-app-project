@@ -11,14 +11,15 @@ export default function App2(){
 const [basket, setBasket] = useState([])
 const [count, setCount] = useState(0);
 const [totalPrice, setTotalPrice] = useState(0);
-// const [itemQuantity, setItemQuantity] = useState(0)
-
+// ====ToDo====
+// Decrement for basket
 const increment = () => {
   setCount(count + 1);
 };
 const emptyBasket = () => {
   setCount(0);
   setTotalPrice(0);
+  setBasket([])
 };
 const handleProductClick = (price) => {
   setTotalPrice((prevTotalPrice) => prevTotalPrice + parseFloat(price));

@@ -37,9 +37,9 @@ function NavigationBar(props){
           >
             <Nav.Link href="#action1"className='brand'>Home</Nav.Link>
             <Nav.Link href="#action2"className='brand'>Technology</Nav.Link>
-            <div className='brand'>
-              <p className='brand'><Link to={`/Basket`} >Basket</Link></p>
-            </div>
+            {/* <div className='brand'> */}
+              <p className='basket-label'><Link to={`/Basket`} >Basket</Link></p>
+            {/* </div> */}
             <Basket incrementCount = {props.incrementCount}/>
             <p className='total'>Total:£{props.total}</p>
             <Button className='empty'variant='outline-danger' onClick={props.clearBasket}>Empty</Button>

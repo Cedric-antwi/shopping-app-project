@@ -10,13 +10,9 @@ html {
   display: flex;
   width: 400px;
   padding: 15px;
-  /* background-color: lavender;
-    border: 1px solid rgb(208, 208, 244); */
   background-color: lightgray;
   border: 1px solid darkgray;
-  /* justify-content: center; */
   margin: 10px;
-  /* border: 2px solid red; */
   text-align: center;
 }
 
@@ -55,10 +51,9 @@ html {
 }
 
 .total {
-  line-height: 2.5;
+  margin-top: 16px;
   margin-left: 10px;
   width: 90px;
-  /* color: whitesmoke; */
 }
 
 .brand:hover {
@@ -66,14 +61,16 @@ html {
   color: rgb(50, 50, 192);
 }
 
+.basket-label {
+  margin-top: 16px;
+}
 .basket-count {
-  line-height: 2.5;
+  margin-top: 16px;
   width: 9.77px;
 }
 .basket-products {
   display: flex;
-  border: solid 1px red;
-  /* background-color: lightgrey; */
+  box-shadow:0px 1px 5px black;
   margin-bottom: 10px;
 }
 
@@ -93,6 +90,16 @@ html {
   padding-left: 8px;
   padding-right: 8px;
 }
+
+.items-none {
+  box-shadow:0px 1px 3px black;
+  opacity: 0.5;
+  width: 370px;
+  position: relative;
+  margin: 25vh auto 0;
+  text-align: center;
+}
+
 .s-dropdown {
   background-color: white;
   display: flex;
@@ -107,7 +114,6 @@ html {
 .s-dropdown-row {
   cursor: pointer;
   text-align: start;
-  /* margin: 2px 0; */
 }
 
 .caro {

@@ -11,11 +11,35 @@ export default function App2(){
 const [basket, setBasket] = useState([])
 const [count, setCount] = useState(0);
 const [totalPrice, setTotalPrice] = useState(0);
-// ====ToDo====
-// Decrement for basket
-const increment = () => {
+// const [itemQuantity, setItemQuantity] = useState(basket.length)
+
+function incrementItemsQ(item){
+    // console.log(item.productTitle,item.defaultQuantity)
+    item.defaultQuantity += 1
+}
+function decrementItemsQ(item, price){
+    console.log(item.productTitle,item.defaultQuantity)
+    if (item.defaultQuantity > 0){
+        item.defaultQuantity -= 1
+        setCount(count - 1)
+        setTotalPrice((prevTotalPrice) => prevTotalPrice - parseFloat(price));
+    }
+}
+
+const increment = (item, itemQ) => {
   setCount(count + 1);
 };
+const decrement = (price, quantity) => {
+    if (count > 0) {
+        setCount(count - 1)
+        setTotalPrice((prevTotalPrice) => prevTotalPrice - parseFloat(price));
+    }
+}
+
+// const decrement = (price, quantity) => {
+//     if (quantity.defaultQuantity > 0)
+// }
+
 const emptyBasket = () => {
   setCount(0);
   setTotalPrice(0);
@@ -27,14 +51,12 @@ const handleProductClick = (price) => {
 
 
 const basketItems = (item) => {
-    console.log("here",item)
     if (basket.includes(item)){
         setCount(count + 1)
         item.defaultQuantity += 1
     } else {
         setBasket([...basket, item])  
     }
-
 }
 
 
@@ -53,7 +75,7 @@ const basketItems = (item) => {
                     
                     />} />
                     <Route path="/overview/:id" element={<Overview/>} />
-                    <Route path="/Basket" element={<ShowBasket basketItems={basket} count={count} totalPrice={totalPrice} data={Data} />}/>
+                    <Route path="/Basket" element={<ShowBasket basketItems={basket} totalPrice={totalPrice} data={Data} decrement={decrement} increment={increment} count={count} handleProductClick={handleProductClick} incrementItemsQ={incrementItemsQ} decrementItemsQ={decrementItemsQ}/>}/>
                     <Route path="*" element={<NoPage />} /> 
                 </Routes>
             </BrowserRouter>

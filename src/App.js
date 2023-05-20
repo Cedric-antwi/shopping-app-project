@@ -11,14 +11,11 @@ export default function App2(){
 const [basket, setBasket] = useState([])
 const [count, setCount] = useState(0);
 const [totalPrice, setTotalPrice] = useState(0);
-// const [itemQuantity, setItemQuantity] = useState(basket.length)
 
 function incrementItemsQ(item){
-    // console.log(item.productTitle,item.defaultQuantity)
     item.defaultQuantity += 1
 }
 function decrementItemsQ(item, price){
-    console.log(item.productTitle,item.defaultQuantity)
     if (item.defaultQuantity > 0){
         item.defaultQuantity -= 1
         setCount(count - 1)
@@ -36,9 +33,6 @@ const decrement = (price, quantity) => {
     }
 }
 
-// const decrement = (price, quantity) => {
-//     if (quantity.defaultQuantity > 0)
-// }
 
 const emptyBasket = () => {
   setCount(0);

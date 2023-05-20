@@ -22,7 +22,7 @@ export default [
         id: 2,
         defaultQuantity: 1,
         productTitle: "Kitchen Appliance",
-        productName: "utility",
+        productName: "kitchen appliance",
         overview: "Basic household appliances starting from £80, dont miss out",
         price: 80,
         img: "https://media.istockphoto.com/id/1196974664/photo/set-of-home-kitchen-appliances-in-the-room-on-the-wall-background.jpg?b=1&s=612x612&w=0&k=20&c=BjkZyLeGqKsHJCZe50HRi-i_2rVLH37FGxW-HngoyfM="
@@ -67,7 +67,7 @@ export default [
         id: 7,
         defaultQuantity: 1,
         productTitle: "Wireless airbuds",
-        productName: "wireless airbuds",
+        productName: "wireles sairbuds",
         overview: "True wireless earbuds for immersive audio experience.",
         price: 120,
         img: "https://media.istockphoto.com/id/1204039347/photo/apple-airpods-on-a-white-background.jpg?s=612x612&w=0&k=20&c=2__4hfynkvBt7PA0UE7N5JxSTuaGRFVKaXJUuoQlBzk="

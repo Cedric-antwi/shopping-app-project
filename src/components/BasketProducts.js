@@ -1,16 +1,18 @@
 import React from "react"
-// import {useState} from 'react'
 
+
+document.body.style.backgroundColor = "whitesmoke"
 function BasketProducts(props){
-    // const [basketQ, setBasketQ] = useState(props.data)
 
-    // for (props.data.defaultQuantity in props.data) {
-    //     console.log(props.data)
+    // function opacity(){
+    //     if (props.data.defaultQuantity < 1){
+    //         document.getElementById('basket-products').style.opacity = 0.5
+    //     }
     // }
-    // console.log(props.data)
     return (       
         <>
-            <div className="basket-products">
+        {/* {props.data.defaultQuantity < 1 && opacity()} */}
+            <div className="basket-products" id="basket-products">
             <div className='basket-img-box'>
                 <img alt='' src={props.img} height="125px" width="225px"/>
             </div>
@@ -19,13 +21,9 @@ function BasketProducts(props){
                 <p>Cost:£ {props.data.price}</p>
                 <p>Quantity:{props.data.defaultQuantity}<button onClick={() => {props.increment(props.basketItems); props.handleProductClick(props.data.price); props.incrementItemsQ(props.data)}}>+</button><button onClick={() => {props.decrementItemsQ(props.data ,props.data.price)}}>-</button></p>
             </div>
-
         </div>
         </>
     )
 }
 
 export default BasketProducts
-// add back props.increment and decrement
-
-//gnna give decrement and increment function to dec/incItemsQ functions

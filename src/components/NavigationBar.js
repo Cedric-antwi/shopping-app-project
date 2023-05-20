@@ -27,7 +27,7 @@ function NavigationBar(props){
       <>
         <Navbar bg="light" expand="lg" id='navbar-banner'>
       <Container fluid>
-        <Navbar.Brand href="#" className='brand'>HomeTech</Navbar.Brand>
+        <Navbar.Brand href="#" className='brand brand-title' id='brand'>HomeTech</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -35,10 +35,10 @@ function NavigationBar(props){
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1"className='brand'>Home</Nav.Link>
-            <Nav.Link href="#action2"className='brand'>Technology</Nav.Link>
+            <Nav.Link href="#action1"className='brand' id='brand'>Home</Nav.Link>
+            <Nav.Link href="#action2"className='brand' id='brand'>Technology</Nav.Link>
             {/* <div className='brand'> */}
-              <p className='basket-label'><Link to={`/Basket`} >Basket</Link></p>
+              <p className='basket-label' id='brand'><Link to={`/Basket`} >Basket: </Link></p>
             {/* </div> */}
             <Basket incrementCount = {props.incrementCount}/>
             <p className='total'>Total:£{props.total}</p>
@@ -62,7 +62,7 @@ function NavigationBar(props){
           {props.search.filter((item) => {
             const searchTerm = props.searchValue.toLowerCase()
             const name = item.productName.toLowerCase()
-            return searchTerm && name.startsWith(searchTerm)
+            return name.startsWith(searchTerm)
           })
           .map((item) => <div onClick={() => onSearch(item.productName)} className='s-dropdown-row' key={item.id}>{item.productName}</div>)}
     </div>

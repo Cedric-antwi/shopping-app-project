@@ -4,14 +4,12 @@ import BasketProducts from '../components/BasketProducts'
 
 
 
-export default function ShowBasket({basketItems, set}){
-    // const location = useLocation();
-    // const data = location.state?.state;
-    // console.log(props.products)
-    // console.log(props.basket)
-    console.log(basketItems)
+export default function ShowBasket({basketItems, totalPrice, decrement, increment, count, handleProductClick, itemQuantity, incrementItemsQ, decrementItemsQ}){
+
+    // console.log(basketItems[1].defaultQuantity)
 
     const basketProducts = basketItems.map((item) => {
+    if (count > 0){
         return (
           
           <BasketProducts
@@ -19,19 +17,28 @@ export default function ShowBasket({basketItems, set}){
                 id = {item.id}
                 img={item.img}
                 title={item.productTitle}
-                cost={item.price}
-                // thisState={basketItems}
-                // set={set}
+                data={item}
+                decrement={decrement}
+                increment={increment}
+                count={count}
+                handleProductClick={handleProductClick}
+                basketItems={basketItems}
+                itemQuantity={itemQuantity}
+                incrementItemsQ={incrementItemsQ}
+                decrementItemsQ={decrementItemsQ}
             />
           
         )
+    }
     })
-
+    
     return (
         <>
         <button><Link to ={`/home`}>↩ Back to home page</Link></button>
         <h2 className='basket'>Your Basket</h2>
-        <p>Total Price:</p>
+        {count === 0 && <h1 className="items-none">No items in basket</h1>}
+        {count > 0 && <><p>Total Order Price: £{totalPrice}</p>
+        <p>Basket : {count}</p></>}
         {basketProducts}
         </>
     )

@@ -1,31 +1,26 @@
 import React from "react"
-// import {useState} from 'react'
+
+
+document.body.style.backgroundColor = "whitesmoke"
 function BasketProducts(props){
-    // const [price, setPrice] = useState(0)
 
-    // const handleRemoveItem = (id) => {
-    //     const arr = props.thisState.filter((item) => item.id !== id)
-    //     props.set(arr)
-    //     handlePrice()
+    // function opacity(){
+    //     if (props.data.defaultQuantity < 1){
+    //         document.getElementById('basket-products').style.opacity = 0.5
+    //     }
     // }
-
-    // const handlePrice = () => {
-    //     let ans = 0
-    //     props.thisState.map((item) => (ans += item.amount * item.price))
-    //     setPrice(ans)
-    // }
-    return (
+    return (       
         <>
-            <div className="basket-products">
+        {/* {props.data.defaultQuantity < 1 && opacity()} */}
+            <div className="basket-products" id="basket-products">
             <div className='basket-img-box'>
-                <img alt='' src={props.img} height="200px" width="300px"/>
+                <img alt='' src={props.img} height="125px" width="225px"/>
             </div>
             <div className='basket-info'>
                 <p>{props.title}</p>
-                <p>Cost:£ {props.cost}</p>
-                <p>Quantity: {}</p>
+                <p>Cost:£ {props.data.price}</p>
+                <p>Quantity:{props.data.defaultQuantity}<button onClick={() => {props.increment(props.basketItems); props.handleProductClick(props.data.price); props.incrementItemsQ(props.data)}}>+</button><button onClick={() => {props.decrementItemsQ(props.data ,props.data.price)}}>-</button></p>
             </div>
-
         </div>
         </>
     )

@@ -2,10 +2,6 @@ import './App.css';
 import Nav from '../components/NavigationBar'
 import React from 'react';
 import Product from '../components/Product'
-// import img1 from './components/photos/camera-32871_640.png'
-// import img2 from './components/photos/istockphoto-1289373642-170667a.jpg'
-// import img3 from './components/photos/charge-159707__340.webp'
-// import img4 from './components/photos/speakers.jpeg'
 import Carousel from '../components/Carousel';
 import { useState } from 'react'
 import Data from '../Data'

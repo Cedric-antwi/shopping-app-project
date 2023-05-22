@@ -62,7 +62,7 @@ function NavigationBar(props){
           {props.search.filter((item) => {
             const searchTerm = props.searchValue.toLowerCase()
             const name = item.productName.toLowerCase()
-            return name.startsWith(searchTerm)
+            return searchTerm && name.startsWith(searchTerm)
           })
           .map((item) => <div onClick={() => onSearch(item.productName)} className='s-dropdown-row' key={item.id}>{item.productName}</div>)}
     </div>

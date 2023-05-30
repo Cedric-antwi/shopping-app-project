@@ -67,7 +67,7 @@ export default [
         id: 7,
         defaultQuantity: 1,
         productTitle: "Wireless airbuds",
-        productName: "wireles sairbuds",
+        productName: "wireless airbuds",
         overview: "True wireless earbuds for immersive audio experience.",
         price: 120,
         img: "https://media.istockphoto.com/id/1204039347/photo/apple-airpods-on-a-white-background.jpg?s=612x612&w=0&k=20&c=2__4hfynkvBt7PA0UE7N5JxSTuaGRFVKaXJUuoQlBzk="

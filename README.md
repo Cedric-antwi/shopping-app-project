@@ -1,5 +1,5 @@
 # E-commerce shopping website
-TThis tech store is an e-commerce platform built using React and developed in Visual Studio Code
+This tech store is an e-commerce platform built using React and developed in Visual Studio Code
 
 # Getting Started with Create React App
 
